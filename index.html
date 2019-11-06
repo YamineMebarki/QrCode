@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>QrCode</title>
+    <!--CSS-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="jumbotron">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form class="text-center mt-5">
+                <h1>" Générateur de Qr-Code "</h1>
+                <div class="form-group">
+                    <label for="qrcode">Url ou Message :</label>
+                    <input type="text" name="qrcode" id="qrcode" class="form-control" required>
+                </div>
+                <input type="submit" value="Envoyer" class="btn btn-success">
+                <input type="reset" value="Annuler" class="btn btn-danger">
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    var form = document.querySelector("form");
+    // Affiche de toutes les données saisies ou choisies
+    form.addEventListener("submit", function () {
+        var qrcode = form.elements.qrcode.value;
+        document.write( '<div class="text-center mt-5"><img src="https://chart.googleapis.com/chart?cht=qr&chl='+ qrcode + '&chs=250x250&choe=ISO-8859-1" alt="qrcode" class="mt-5" style="display: block;margin-left: auto;margin-right: auto;" /></div> ');
+    });
+</script>
+</body>
+</html>
